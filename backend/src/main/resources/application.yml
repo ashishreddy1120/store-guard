@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/storeguard}
+    username: ${DB_USER:storeguard}
+    password: ${DB_PASS:storeguard}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+    com.storeguard: DEBUG
